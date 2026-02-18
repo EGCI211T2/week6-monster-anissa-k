@@ -1,21 +1,53 @@
 #include <iostream>
 using namespace std;
 
-#include "monster.h"
+#include "thanos.h"
 
-int main(int argc, char* argv[]) {
-  //1. Your monster
-  monster YOU(argv[1],atoi(argv[2]),atoi(argv[3]);
+int main(int argc, char* argv[]) 
+{
+  
+  int n;
+  cout<<"How many nonster?";
+  cin>>n;
+
+  monster *m= new monster[n];
+
+  cout<<"----------------------" <<endl;
+  for(int i=0;i<n;i++)
+  {
+      m[i].display(); 
+  }
+
+  for(int i=0; i<n-1; i++)
+  {
+    m[i].Attack(m[i+1]);
+  }
+  m[n-1].Attack(m[0]);
+
+  for(int i=0; i<n; i++)
+  {
+    m[i].heal();
+    m[i].display(); //if the hp=0, you dont display
+  }
+
+  Thanos T;
+  ++T;
+  ++T;
+  T.snap_finger(m,n)
+  ++T;
+  ++T;
+  T.snap_finger(m,n);
+  ++T;
+  ++T;
+  T.snap_finger(m,n)
 
  //2 other monster
-  int i;
-  for(/* finish the for loop*/){
-        monster *p=new monster(argv[i],atoi(argv[i+1]),atoi(argv[i+2]);  
-         //fight each other 
-
-      delete p;
-      You.heal();
+  for(int i=0; i<n; i++)
+  {
+    m[i].display();
   }
+
+  delete [] m;
   
 }//call des for A
   
